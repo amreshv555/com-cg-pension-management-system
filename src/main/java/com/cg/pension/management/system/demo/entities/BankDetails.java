@@ -1,17 +1,18 @@
 package com.cg.pension.management.system.demo.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name ="bank_details")
 public class BankDetails {
 
 	 private String bankName;
-	 @NotNull
+	 
+	 @Id
 	 private Long accno;
 	 private String branch;
 	 private String ifscCode;

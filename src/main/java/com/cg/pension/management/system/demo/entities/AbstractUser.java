@@ -1,5 +1,6 @@
 package com.cg.pension.management.system.demo.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,19 +14,25 @@ public class AbstractUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int adminid;
-	private String username;
+	@Column
+	private String userName;
+	@Column
 	private String password;
+	@Column(unique=true,nullable=false)
 	private String email;
+	@Column(unique=true,nullable=false)
 	private String mobile;
+	
 	private String pensionerid;
+	
 	public AbstractUser() {
 		super();
 	}
-	public AbstractUser(int adminid, String username, String password, String email, String mobile,
+	public AbstractUser(int adminid, String userName, String password, String email, String mobile,
 			String pensionerid) {
 		super();
 		this.adminid = adminid;
-		this.username = username;
+		this.userName = userName;
 		this.password = password;
 		this.email = email;
 		this.mobile = mobile;
@@ -37,11 +44,11 @@ public class AbstractUser {
 	public void setAdminid(int adminid) {
 		this.adminid = adminid;
 	}
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(String userName) {
+		this.userName = userName;
 	}
 	public String getPassword() {
 		return password;
@@ -69,7 +76,7 @@ public class AbstractUser {
 	}
 	@Override
 	public String toString() {
-		return "AbstractUser [adminid=" + adminid + ", username=" + username + ", password=" + password + ", email="
+		return "AbstractUser [adminid=" + adminid + ", username=" + userName + ", password=" + password + ", email="
 				+ email + ", mobile=" + mobile + ", pensionerid=" + pensionerid + "]";
 	}
 	

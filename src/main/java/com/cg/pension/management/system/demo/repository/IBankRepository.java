@@ -8,4 +8,5 @@ public interface IBankRepository extends JpaRepository<BankDetails, Integer>{
 
 	public abstract  BankDetails addBank(BankDetails bankDetails);
 	public abstract void deleteBank(Long accno);
+	
 }

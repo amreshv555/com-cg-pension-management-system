@@ -35,8 +35,8 @@ public class BankService implements IBankService{
 		}
 
 	@Override
-	public void deleteBank(int accno) {
-		if(bankRepository.exists(bankDetails.getAccno())
+	public void deleteBank(Long accno) {
+		if(bankRepository.existsById(bankDetails.getAccno())
 		bankRepository.deleteById(accno);
 	}
 

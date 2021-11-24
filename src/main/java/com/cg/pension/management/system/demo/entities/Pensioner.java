@@ -1,5 +1,6 @@
 package com.cg.pension.management.system.demo.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +13,15 @@ public class Pensioner {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int pensionerid;
+	 @Column(nullable=false)
 	private int age;
+	@Column(name="aadhar_no", unique=true, nullable=false)
 	 private int aadhar;
+	@Column(name="pan_no",unique=true,nullable=false)
 	 private int pan;
+	@Column(nullable=false)
 	 private long salary;
+	@Column(nullable=false)
 	 private String pensionType;
 	 
 	
